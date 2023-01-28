@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, ToastController } from 'ionic-angular';
+import { HabitosPage } from '../habitos/habitos';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,23 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  @ViewChild('usuario') user;
+  @ViewChild('senha') password;
+  constructor(public navCtrl: NavController,
+              public toastCtrl: ToastController) {
 
+  }
+
+  entrar(){
+    let toast = this.toastCtrl.create({duration: 3000, position: 'bottom'})
+    if(this.user.value == 'admin' && this.password.value == 'admin'){
+      this.navCtrl.push(HabitosPage);
+      toast.setMessage('Usuário logado com sucesso!');
+      toast.present();  
+    }else {
+      toast.setMessage('Usuário ou senha não encontrados!');
+      toast.present();  
+    }
   }
 
 }
