@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { HabitosPage } from '../habitos/habitos';
+import { HomePage } from '../home/home';
 
 
 @IonicPage()
@@ -32,5 +33,9 @@ export class RegistrarPage {
       toast.present();
     })
   }
+
+  login(){
+    this.navCtrl.setRoot(HomePage)
+  }  
 
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the HabitosPage page.
@@ -15,11 +17,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HabitosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth: AngularFireAuth) {
+    
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HabitosPage');
+  logout(){
+    this.afAuth.auth.signOut();
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

@@ -1,24 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>CdH - Controle de Hábitos</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Entrar</h3>
+<ion-content padding >
+  <div class="centralizado">
+    <h2 class="titulo">Entrar</h2>
 
-  <ion-item>
-    <ion-label stacked>Email:</ion-label>
-    <ion-input type="text" #usuario></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label stacked>Senha:</ion-label>
-    <ion-input type="password" #senha></ion-input>
-  </ion-item>
-
-  <button ion-button secondary (click)="entrar()">Logar</button>
-  <button ion-button secondary (click)="registrar()">Cadastrar</button>
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input type="text" #usuario></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Senha:</ion-label>
+      <ion-input type="password" #senha></ion-input>
+    </ion-item>
+    <button ion-button secondary (click)="entrar()">Logar</button>
+    <p class="textos"><a (click)="registrar()">CADASTRAR</a></p>
+    <p class="textos"><a (click)="registrar()">ESQUECI MINHA SENHA</a></p>
+  </div>
 </ion-content>

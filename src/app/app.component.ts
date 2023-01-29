@@ -5,6 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { ignoreElements } from 'rxjs/operator/ignoreElements';
+import { HabitosPage } from '../pages/habitos/habitos';
+import { MetaPage } from '../pages/meta/meta';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +16,31 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public afAuth:AngularFireAuth) 
+  {
+    const authObserver = afAuth.authState.subscribe(users => {
+      
+      if(users){
+        this.rootPage = HabitosPage;
+      }else{
+        this.rootPage = HomePage;
+      }
+      authObserver.unsubscribe();
+        
+    })
+    
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Habitos', component: HabitosPage },
+      { title: 'Metas', component: MetaPage }
+
     ];
 
   }

@@ -12,6 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RegistrarPage } from '../pages/registrar/registrar';
+import { MetaPage } from '../pages/meta/meta';
 
 const firebaseAuth = {
   apiKey: "AIzaSyB9seepd6MQy65kokU7tQD8JYlAfyCXaBg",
@@ -28,7 +29,8 @@ const firebaseAuth = {
     HomePage,
     ListPage,
     HabitosPage,
-    RegistrarPage
+    RegistrarPage,
+    MetaPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ const firebaseAuth = {
     HomePage,
     ListPage,
     HabitosPage,
-    RegistrarPage
+    RegistrarPage,
+    MetaPage
   ],
   providers: [
     StatusBar,

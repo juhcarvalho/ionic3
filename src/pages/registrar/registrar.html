@@ -5,14 +5,18 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label stacked>Email:</ion-label>
-    <ion-input type="text" #usuario></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label stacked>Senha:</ion-label>
-    <ion-input type="password" #senha></ion-input>
-  </ion-item>
+  <div class="centralizado">
+    <h2 class="titulo">Registrar-se</h2>
+    <ion-item>
+      <ion-label stacked>Email: *</ion-label>
+      <ion-input required type="text" #usuario></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Senha: *</ion-label>
+      <ion-input type="password" #senha></ion-input>
+    </ion-item>
 
-  <button ion-button secondary (click)="registrar()">Cadastrar</button>
+    <button ion-button inline secondary (click)="registrar()">Cadastrar</button>
+    <button ion-button inline clear (click)="login()">FAZER LOGIN</button>
+  </div>
 </ion-content>
