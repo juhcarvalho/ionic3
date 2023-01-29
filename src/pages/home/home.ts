@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { HabitosPage } from '../habitos/habitos';
+import { RegistrarPage } from '../registrar/registrar';
 
 @Component({
   selector: 'page-home',
@@ -25,6 +26,10 @@ export class HomePage {
       toast.setMessage('Usuário ou senha não encontrados!');
       toast.present();  
     }
+  }
+
+  registrar(){
+    this.navCtrl.push(RegistrarPage);
   }
 
 }

@@ -1,15 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Cadastrar</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Entrar</h3>
-
   <ion-item>
     <ion-label stacked>Email:</ion-label>
     <ion-input type="text" #usuario></ion-input>
@@ -19,6 +14,5 @@
     <ion-input type="password" #senha></ion-input>
   </ion-item>
 
-  <button ion-button secondary (click)="entrar()">Logar</button>
   <button ion-button secondary (click)="registrar()">Cadastrar</button>
 </ion-content>
